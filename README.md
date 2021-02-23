@@ -49,19 +49,12 @@ Parameters:
 *  __extent__ (list): Optional for Cartopy and image plots. If not specified, this will be generated based on the coordinates of your points such that they are all included.
 *  __scale_diverges__ (Boolean): Optional. If True, diverging sets of glyphs are used for positive and negative values. If not specified, your scale will diverge if both positive and negative values are included for the shape variable.
 *  __shape__ (string): Optional. Glyph shape design to use for non-divergent scales. Default is sine. Available designs are:
-<img align="right" width="676" height="70" src="https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/sine.png">
    * "sine"
-<img align="right" width="676" height="70" src="https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/saw.png">
    * "saw"
-<img align="right" width="676" height="70" src="https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/reverse_saw.png">
    * "reverse_saw"
-<img align="right" width="676" height="70" src="https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/square.png">
    * "square"
-<img align="right" width="676" height="70" src="https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/triangular.png">
    * "triangular"
-<img align="right" width="676" height="70" src="https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/concave.png">
    * "concave"
-<img align="right" width="676" height="70" src="https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/star.png">
    * "star"
 *  __shape_pos__ (string): Optional. When using divergent scale, glyph shape design to use for positive values. Default is sawtooth. Available designs as above.
 *  __shape_neg__ (string): Optional. When using divergent scale, glyph shape design to use for negative values. Default is sawtooth. Available designs as above.
@@ -87,6 +80,23 @@ Parameters:
   * "closest": use the closest scale value
   * "limit": use the highest scale value that the glyph value is greater than or equal to (based on modulus for negative values)
 * __show_legend__ (Boolean): Optional. Specify whether or not to display the legend to the right of the plot.
+
+## Glyph Designs
+
+### sine
+![sine glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/sine.png "sine glyphs")
+### saw
+![saw glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/saw.png "saw glyphs")
+### reverse_saw
+![reverse_saw glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/reverse_saw.png "reverse_saw glyphs")
+### square
+![square glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/square.png "square glyphs")
+### triangular
+![triangular glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/triangular.png "triangular glyphs")
+### concave
+![concave glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/concave.png "concave glyphs")
+### star
+![star glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/star.png "star glyphs")
 
 ## Examples
 
