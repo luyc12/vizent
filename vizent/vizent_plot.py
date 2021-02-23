@@ -19,7 +19,6 @@ import matplotlib.pyplot as plt
 from matplotlib import gridspec
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature 
-import pandas as pd 
 from .glyph_shapes import shapes, get_shape_points
 from .scales import * 
 from .background_image import get_image, add_image_background

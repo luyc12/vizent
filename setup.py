@@ -17,7 +17,6 @@ setuptools.setup(
             'cartopy',
             'matplotlib',
             'numpy',
-            'pandas',
             'scipy',
             'pillow'
         ],

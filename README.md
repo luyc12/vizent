@@ -19,7 +19,6 @@ Prerequisites:
 * cartopy
 * matplotlib
 * numpy
-* pandas
 * scipy
 * pillow
 
