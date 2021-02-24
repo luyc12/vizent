@@ -8,7 +8,7 @@ setuptools.setup(
     packages = ['vizent'],
     package_data={'vizent': ['images/*.png']},
     include_package_data = True,
-    version = '1.01',
+    version = '1.0.1',
     license='MIT',
     description = 'A library for creating scatterplots using visual entropy glyphs.',
     author = 'Lucy McLaughlin',

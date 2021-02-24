@@ -13,7 +13,7 @@ Applications for the Vizent glyphs include:
 * when you need to represent derivatives, eg a rate and an acceleration
 * any other pair of values at a point on a plot
 
-Vizent supports scatter plots on a plain background, a cartopy map background, or using an image as a background. It is also possible to add further elements to your figure using standard matplotlib calls. See the examples below, or for a detailed tutorial see [link to medium article, ETA 01/03/2021] and do get in touch if you have suggestions for improvements.
+Vizent supports scatter plots on a plain background, a cartopy map background, or using an image as a background. It is also possible to add further elements to your figure using standard matplotlib calls. See the examples below, or for a detailed tutorial see [medium article, ETA 01/03/2021] and do get in touch if you have suggestions for improvements.
 
 
 ## Installation
@@ -25,12 +25,18 @@ pip install vizent
 ```
 [vizent on PyPI](https://pypi.org/project/vizent)
 
-Prerequisites:
-* cartopy
+Dependencies:
 * matplotlib
 * numpy
 * scipy
 * pillow
+* cartopy
+  * Cython
+  * GEOS
+  * Shapely
+  * pyshp
+  * PROJ.4
+  * six
 
 If using Anaconda Python these will likely be included.
 
