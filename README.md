@@ -1,4 +1,4 @@
-<img align="left" width="100" height="100" src="https://github.com/luyc12/vizent/blob/main/vizent/example_images/vizent_logo_thumbnail.png">
+<img align="left" width="100" height="100" src="https://github.com/luyc12/vizent/raw/main/vizent/example_images/vizent_logo_thumbnail.png">
 
 # vizent
 
@@ -96,19 +96,19 @@ Parameters:
 The available glyph shape designs are shown here in full. Value increases with frequency from left (lowest) to right (highest).
 
 ### sine
-![sine glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/sine.png "sine glyphs")
+![sine glyphs](https://github.com/luyc12/vizent/raw/main/vizent/example_images/glyphs/sine.png "sine glyphs")
 ### saw
-![saw glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/saw.png "saw glyphs")
+![saw glyphs](https://github.com/luyc12/vizent/raw/main/vizent/example_images/glyphs/saw.png "saw glyphs")
 ### reverse_saw
-![reverse_saw glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/reverse_saw.png "reverse_saw glyphs")
+![reverse_saw glyphs](https://github.com/luyc12/vizent/raw/main/vizent/example_images/glyphs/reverse_saw.png "reverse_saw glyphs")
 ### square
-![square glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/square.png "square glyphs")
+![square glyphs](https://github.com/luyc12/vizent/raw/main/vizent/example_images/glyphs/square.png "square glyphs")
 ### triangular
-![triangular glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/triangular.png "triangular glyphs")
+![triangular glyphs](https://github.com/luyc12/vizent/raw/main/vizent/example_images/glyphs/triangular.png "triangular glyphs")
 ### concave
-![concave glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/concave.png "concave glyphs")
+![concave glyphs](https://github.com/luyc12/vizent/raw/main/vizent/example_images/glyphs/concave.png "concave glyphs")
 ### star
-![star glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/star.png "star glyphs")
+![star glyphs](https://github.com/luyc12/vizent/raw/main/vizent/example_images/glyphs/star.png "star glyphs")
 
 ## Examples
 
@@ -128,7 +128,7 @@ vizent_plot(x_values, y_values, colour_values, shape_values, size_values,
             title="A plot with a title", x_label="This is the x axis",
             y_label="This is the y axis")
 ```
-![scatterplot image](https://github.com/luyc12/vizent/blob/main/vizent/example_images/basic_example.png "scatterplot image")
+![scatterplot image](https://github.com/luyc12/vizent/raw/main/vizent/example_images/basic_example.png "scatterplot image")
 
 ### Create a map using Cartopy:
 
@@ -150,7 +150,7 @@ vizent_plot(x, y, cases, accel, size, shape_label="Acceleration",
             title='COVID19 daily case count and one day acceleration \n'
             'English regions, 30th October 2020') 
 ```
-![cartopy image](https://github.com/luyc12/vizent/blob/main/vizent/example_images/cartopy_example.png "cartopy image")
+![cartopy image](https://github.com/luyc12/vizent/raw/main/vizent/example_images/cartopy_example.png "cartopy image")
 
 ### Create a map of england using an image background:
 
@@ -172,7 +172,7 @@ vizent_plot(x, y, cases, accel, size, shape_label="Acceleration",
             "day acceleration \n English regions, 30th October 2020")
 ```
 
-![map image](https://github.com/luyc12/vizent/blob/main/vizent/example_images/england_example.png "map image")
+![map image](https://github.com/luyc12/vizent/raw/main/vizent/example_images/england_example.png "map image")
 
 Map © [OpenStreetMap](https://www.openstreetmap.org/) contributors
 
@@ -197,7 +197,7 @@ vizent_plot(eastings, northings, average, variance, size,
             title="Newcastle Upon Tyne Temperature Data",
             show_axes=False)
 ```
-![newcastle image](https://github.com/luyc12/vizent/blob/main/vizent/example_images/newcastle_example.png "newcastle image")
+![newcastle image](https://github.com/luyc12/vizent/raw/main/vizent/example_images/newcastle_example.png "newcastle image")
 
 ### Add your own MatPlotLib elements to the plot:
 
@@ -253,7 +253,7 @@ plt.show()
 plt.close()  
 ```
 
-![custom plot example](https://github.com/luyc12/vizent/blob/main/vizent/example_images/custom_example.png "custom plot example")
+![custom plot example](https://github.com/luyc12/vizent/raw/main/vizent/example_images/custom_example.png "custom plot example")
   
 
 ## Release History

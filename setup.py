@@ -8,7 +8,7 @@ setuptools.setup(
     packages = ['vizent'],
     package_data={'vizent': ['images/*.png']},
     include_package_data = True,
-    version = '1.33',
+    version = '1.01',
     license='MIT',
     description = 'A library for creating scatterplots using visual entropy glyphs.',
     author = 'Lucy McLaughlin',
@@ -16,11 +16,17 @@ setuptools.setup(
     url = 'https://github.com/luyc12/vizent',
     keywords = ['visualization', 'plot', 'bivariate', 'glyphs', 'scatterplot', 'dataviz'],
     install_requires = [
-            'cartopy',
             'matplotlib',
             'numpy',
             'scipy',
-            'pillow'
+            'pillow',
+            'Cython',
+            'GEOS',
+            'Shapely',
+            'pyshp',
+            'PROJ',
+            'six',
+            'cartopy'
         ],
     classifiers=[
       'Development Status :: 3 - Alpha',
