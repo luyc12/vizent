@@ -107,108 +107,110 @@ def vizent_plot(x_values, y_values, colour_values, shape_values, size_values,
     Each point is displayed as a Visual Entropy glyph. 
 
     Parameters:
-        x_values (list): list of x coordinates (numerical)
-        y_values (list): list of y coordinates (numerical)
-        colour_values (list): list of values to be represented 
-                              by colour (numerical)
-        shape_values (list): list of values to be represented 
-                             by shape (numerical)
-        size_values (list): list of values for diameter of 
-                            glyphs in points.
-        colormap (colormap): Optional. Default is metoffice 
+        x_values (list of floats): list of x coordinates
+        y_values (list of floats): list of y coordinates
+        colour_values (list of floats): list of values to be 
+                                        represented by colour
+        shape_values (list of floats): list of values to be 
+                                       represented by shape
+        size_values (list of floats): list of values for 
+                                      diameter of glyphs in 
+                                      points.
+        colormap (colormap or registered colormap name): 
+                             Optional. Default is metoffice 
                              colour scheme. Use any matplotlib 
                              colormap.        
-        scale_x (int): Optional. Defines x size of plot window
-                       in inches.
-        scale_y (int): Optional. Defines y size of plot window
-                       in inches.       
-        use_image (Boolean): Optional. If True, plot on an image 
-                             background.        
-        image_type (String): Optional. Use preset image type. 
-                             "newcastle" for detailed 3d render
-                             of newcastle (use eastings and
-                             northings for x and y), "england" 
-                             for OSM england map (use grid ref)
-        image_file (String): Optional. Use any image file. Please
-                             specify absolute path. You must
-                             also specify the extent.
-        use_cartopy (boolean): Optional. Plot the points on
-                               Cartopy map. 
-        extent (list): Optional. Axis extent images or extent
-                       of coordinates for Cartopy. A list of 
-                       four values: 
-                       [xmin, xmax, ymin, ymax]   
-        scale_diverges (Boolean): Optional. If True, diverging 
-                                  sets of glyphs are used for 
-                                  positive and negative values.
-        shape (String): Optional. Glyph shape design to use.
-                        Use shape_pos and shape_neg for 
-                        divergent scale. Default is sine.
-        shape_pos (String): Optional. When using divergent
-                            scale, glyph shape design to use
-                            for positive values.
-        shape_neg (String): Optional. When using divergent
-                            scale, glyph shape design to use
-                            for negative values.
-        colour_max (numerical): Optional. Maximum value to use
-                                for colour in key.
-        colour_min (numerical): Optional. Minimum value to use
-                                for colour in key.
+        scale_x (float): Optional. Defines x size of plot window
+                         in inches.
+        scale_y (float): Optional. Defines y size of plot window
+                         in inches.       
+        use_image (bool): Optional. If True, plot on an image 
+                          background.        
+        image_type (str): Optional. Use preset image type. 
+                          "newcastle" for detailed 3d render
+                          of newcastle (use eastings and
+                          northings for x and y), "england" 
+                          for OSM england map (use grid ref)
+        image_file (str): Optional. Use any image file. Please
+                          specify absolute path. You must
+                          also specify the extent.
+        use_cartopy (bool): Optional. Plot the points on
+                            Cartopy map. 
+        extent (list of floats): Optional. Axis limits or 
+                                 extent of coordinates for 
+                                 Cartopy. A list of four 
+                                 values: [xmin, xmax, ymin, 
+                                 ymax]   
+        scale_diverges (bool): Optional. If True, diverging 
+                               sets of glyphs are used for 
+                               positive and negative values.
+        shape (str): Optional. Glyph shape design to use.
+                     Use shape_pos and shape_neg for 
+                     divergent scale. Default is sine.
+        shape_pos (str): Optional. When using divergent
+                         scale, glyph shape design to use
+                         for positive values.
+        shape_neg (str): Optional. When using divergent
+                         scale, glyph shape design to use
+                         for negative values.
+        colour_max (float): Optional. Maximum value to use
+                            for colour in key.
+        colour_min (float): Optional. Minimum value to use
+                            for colour in key.
         colour_n (int): Optional. Number of colour values
-                              to be shown in key.
-        colour_spread (numerical): Optional. Total range of 
-                                   colour values in key. Only
-                                   use if not specifying max
-                                   and min.
-        shape_max (numerical): Optional. Maximum value to use
-                               for shape in key.
-        shape_min (numerical): Optional. Minimum value to use
-                               for shape in key.
+                        to be shown in key.
+        colour_spread (float): Optional. Total range of 
+                               colour values in key. Only
+                               use if not specifying max
+                               and min.
+        shape_max (float): Optional. Maximum value to use
+                           for shape in key.
+        shape_min (float): Optional. Minimum value to use
+                           for shape in key.
         shape_n (int): Optional. Number of shape values
-                             to be shown in key. If using a
-                             diverging scale, this is the 
-                             number of positive values 
-                             including zero. Negative values 
-                             will reflect positive values.
-        shape_spread (numerical): Optional. Total range of 
-                                  shape values in key. Only
-                                  use if not specifying max
-                                  and min.
-        colour_label (String): Optional. Text label for colour
-                               values in key.
-        shape_label (String): Optional. Text label for shape
-                              values in key.
-        title (String): Optional. Title for the plot.
-        x_label (String): Optional. Label for x axis. Not shown 
-                          for image plots.
-        y_label (String): Optional. Label for y axis. Not shown 
-                          for image plots.
-        show_axes (Boolean): Optional. If axes are not wanted,
-                             e.g. for image plots, set to False.
-        save (Boolean): Optional. If True, save the plot as png.
-        file_name (String): Optional. If save, name of saved file.
-        return_axes (Boolean): Optional. If True, the function 
-                               will return fig, ax1. These can be
-                               used to add more MatPlotLib 
-                               elements, such as lines, text 
-                               boxes.
+                       to be shown in key. If using a
+                       diverging scale, this is the 
+                       number of positive values 
+                       including zero. Negative values 
+                       will reflect positive values.
+        shape_spread (float): Optional. Total range of 
+                              shape values in key. Only
+                              use if not specifying max
+                              and min.
+        colour_label (str): Optional. Text label for colour
+                            values in key.
+        shape_label (str): Optional. Text label for shape
+                           values in key.
+        title (str): Optional. Title for the plot.
+        x_label (str): Optional. Label for x axis. Not shown 
+                       for image plots.
+        y_label (str): Optional. Label for y axis. Not shown 
+                       for image plots.
+        show_axes (bool): Optional. If axes are not wanted,
+                          e.g. for image plots, set to False.
+        save (bool): Optional. If True, save the plot as png.
+        file_name (str): Optional. If save, name of saved file.
+        return_axes (bool): Optional. If True, the function 
+                            will return fig, ax1. These can be
+                            used to add more MatPlotLib 
+                            elements, such as lines, text 
+                            boxes.
         scale_dp (int): Optional. The number of decimal places
                         that scale values should be rounded to. 
-        interval_type (String): Optional. This defines how the 
-                                shape of each glyph is 
-                                classified:
-                                  "closest": use the closest 
-                                             scale value
-                                  "limit": use the scale values 
-                                           as a lower limit so 
-                                           that each glyph is 
-                                           >= the shape used but 
-                                           less than the next 
-                                           highest glyph (abs 
-                                           for negative values)
-        show_legend (Boolean): Optional. Specify whether or not
-                               to display the legend to the 
-                               right of the plot.
+        interval_type (str): Optional. This defines how the 
+                             shape of each glyph is 
+                             classified:
+                                "closest": use the closest 
+                                           scale value
+                                "limit": use the highest scale 
+                                         value that the glyph 
+                                         value is greater than 
+                                         or equal to (based on 
+                                         modulus for negative 
+                                         values)
+        show_legend (bool): Optional. Specify whether or not
+                            to display the legend to the 
+                            right of the plot.
     """
     # Check and sanitise inputs
 
