@@ -6,9 +6,15 @@
  
 > A python library for bivariate glyphs integrated with matplotlib
 
-This library allows the user to create visualizations using Visual Entropy Glyphs[1] as scatter points. These are bivariate glyphs which represent one value using a central colour, and a second value using an enclosing shape. The enclosing shapes have measurably varying levels of visual entropy, and a higher visual entropy corresponds to a higher value.
+This library allows the user to create visualizations using Visual Entropy Glyphs[1]. Vizent glyphs are designed to help when you need to add an extra data variable to a scatter plot, a map or a graph. Vizent glyphs are bivariate, that is they allow you to represent two variables at each point on your plot. A central coloured disc is able to represent a continuous variable, an enclosing shape can represent a continuous interval or categorical variable using increasing levels of visual entropy (shape complexity). 
 
-This library supports scatter plots on a plain background, using a cartopy map background, or using an image as a background. It is also possible to add further custom elements to your figure using matplotlib. See the examples below, or for a detailed tutorial see [medium link].
+Applications for the Vizent glyphs include: 
+* when you need represent uncertainty, eg a mean and a standard deviation
+* when you need to represent derivatives, eg a rate and an acceleration
+* any other pair of values at a point on a plot
+
+Vizent supports scatter plots on a plain background, a cartopy map background, or using an image as a background. It is also possible to add further elements to your figure using standard matplotlib calls. See the examples below, or for a detailed tutorial see [link to medium article, ETA 01/03/2021] and do get in touch if you have suggestions for improvements.
+
 
 ## Installation
 
@@ -168,7 +174,7 @@ vizent_plot(x, y, cases, accel, size, shape_label="Acceleration",
 
 ![map image](https://github.com/luyc12/vizent/blob/main/vizent/example_images/england_example.png "map image")
 
-Map is © [OpenStreetMap](https://www.openstreetmap.org/) contributors
+Map © [OpenStreetMap](https://www.openstreetmap.org/) contributors
 
 ### Use detailed background images of Newcastle Upon Tyne:
 

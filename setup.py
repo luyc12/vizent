@@ -6,14 +6,16 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setuptools.setup(
     name = 'vizent',
     packages = ['vizent'],
-    version = '1.0',
+    package_data={'vizent': ['images/*.png']},
+    include_package_data = True,
+    version = '1.33',
     license='MIT',
     description = 'A library for creating scatterplots using visual entropy glyphs.',
     author = 'Lucy McLaughlin',
     author_email = 'lucy.mclaughlin@ncl.ac.uk',
     url = 'https://github.com/luyc12/vizent',
     keywords = ['visualization', 'plot', 'bivariate', 'glyphs', 'scatterplot', 'dataviz'],
-    install_requires=[
+    install_requires = [
             'cartopy',
             'matplotlib',
             'numpy',

@@ -53,7 +53,7 @@ def get_image(x, y, image_type, image_file):
     
     if image_type == "newcastle" or image_type == "england":
         dirname = os.path.split(os.path.abspath(__file__))[0]
-        return "{0}/images/{1}".format(dirname,image), extent
+        return "{0}\\images\\{1}".format(dirname,image), extent
     else:
         return image, extent
 

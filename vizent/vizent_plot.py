@@ -327,7 +327,7 @@ def vizent_plot(x_values, y_values, colour_values, shape_values, size_values,
             extent = get_image(x_values,y_values,image_type,image_file)[1]
         try:
             asp = add_image_background(get_image(x_values,y_values, image_type, 
-                                             image_file)[0], ax1, extent) 
+                                                 image_file)[0], ax1, extent) 
         except:
             print("Image file not found or not valid. Figure will be created "
                   "without image background.")
