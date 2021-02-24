@@ -168,6 +168,8 @@ vizent_plot(x, y, cases, accel, size, shape_label="Acceleration",
 
 ![map image](https://github.com/luyc12/vizent/blob/main/vizent/example_images/england_example.png "map image")
 
+Map is © [OpenStreetMap](https://www.openstreetmap.org/) contributors
+
 ### Use detailed background images of Newcastle Upon Tyne:
 
 ```python
