@@ -6,9 +6,13 @@
  
 > A python library for bivariate glyphs integrated with matplotlib
 
-This package allows the user to create visualizations using Visual Entropy Glyphs[1] as scatter points. These are bivariate glyphs, with the inner colour representing one value, and the outer shape representing another. The user can specify what these two variables represent. This package supports plotting as a standard scatterplot, using a cartopy map background, or using an image as a background.
+This library allows the user to create visualizations using Visual Entropy Glyphs[1] as scatter points. These are bivariate glyphs which represent one value using a central colour, and a second value using an enclosing shape. The enclosing shapes have measurably varying levels of visual entropy, and a higher visual entropy corresponds to a higher value.
+
+This library supports scatter plots on a plain background, using a cartopy map background, or using an image as a background. It is also possible to add further custom elements to your figure using matplotlib. See the examples below, or for a detailed tutorial see [medium link].
 
 ## Installation
+
+vizent can be installed using [pip](https://pip.pypa.io/en/stable/)
 
 ```sh
 pip install vizent
@@ -30,25 +34,25 @@ If using Anaconda Python these will likely be included.
 vizent_plot()
 ~~~~
 
->Draws a scatter plot of the provided points. Each point is displayed as a visual entropy glyph.
+>Produces a scatter plot from the provided points. Each point is displayed as a visual entropy glyph.
 
 Parameters:
 
-*  __x_values__ (list): list of x coordinates (numerical)
-*  __y_values__ (list): list of y coordinates (numerical)
-*  __colour_values__ (list): list of values to be represented using colour (numerical)
-*  __shape_values__ (list): list of values to be represented using shape (numerical)
-*  __size_values__ (list): list of values for diameters of glyphs in points.
-*  __colormap__ (string): Optional. Use any matplotlib colormap. See https://matplotlib.org/3.1.1/gallery/color/colormap_reference.html for full range of options. Alternatively, use "metoffice" to use the MetOffice temperature colour scheme.
-*  __scale_x__ (int): Optional. Defines x size of plot window in inches.
-*  __scale_y__ (int): Optional. Defines y size of plot window in inches. If neither scale_x nor scale_y is specified, the plot will be scaled automatically. If only one is specified, the other will be adjusted to suit the proportions of the plot.
-*  __use_image__ (Boolean): Optional. If True, plot on an image background. This can be your own image, or certain included image background can be used, see image_type.
-*  __image_type__ (String): Optional. Use one of the included image backgrounds. Use "newcastle" for detailed 3D rendering of Newcastle Upon Tyne which will be selected based on the coordinates of your points (use eastings and northings for x and y, note that a limited area is available currently), or "england" for OSM england map (use grid ref for x and y). 
-*  __image_file__ (String): Optional. The image file to use as image background. 
-*  __use_cartopy__ (Boolean): Optional. Plot the points on Cartopy map.
-*  __extent__ (list): Optional for Cartopy and image plots. If not specified, this will be generated based on the coordinates of your points such that they are all included.
-*  __scale_diverges__ (Boolean): Optional. If True, diverging sets of glyphs are used for positive and negative values. If not specified, your scale will diverge if both positive and negative values are included for the shape variable.
-*  __shape__ (string): Optional. Glyph shape design to use for non-divergent scales. Default is sine. Available designs are:
+*  __x_values__ (list of floats): list of x coordinates
+*  __y_values__ (list of floats): list of y coordinates
+*  __colour_values__ (list of floats): list of values to be represented using colour
+*  __shape_values__ (list of floats): list of values to be represented using shape
+*  __size_values__ (list of floats): list of values for diameters of glyphs in points.
+*  __colormap__ (colormap or registered colormap name): Optional. Use any matplotlib colormap. See [here](https://matplotlib.org/3.1.1/gallery/color/colormap_reference.html) for full range of options. Alternatively, use "metoffice" to use the MetOffice temperature colour scheme.
+*  __scale_x__ (float): Optional. Defines x size (width) of plot window in inches.
+*  __scale_y__ (float): Optional. Defines y size (height) of plot window in inches. If neither scale_x nor scale_y is specified, the plot will be scaled automatically. If only one is specified, the other will be adjusted to suit the proportions of the plot.
+*  __use_image__ (bool): Optional. If True, plot on an image background. This can be your own image, or certain included image background can be used, see image_type.
+*  __image_type__ (str): Optional. Use one of the included image backgrounds. Use "newcastle" for detailed 3D rendering of Newcastle Upon Tyne which will be selected based on the coordinates of your points (use eastings and northings for x and y, note that a limited area is available currently), or "england" for OSM england map (use grid ref for x and y). 
+*  __image_file__ (str): Optional. The image file to use as image background. 
+*  __use_cartopy__ (bool): Optional. Plot the points on Cartopy map.
+*  __extent__ (list of floats): Optional. If not specified, this will be generated based on the coordinates of your points such that they are all included. This is not needed when using a preset image type.
+*  __scale_diverges__ (bool): Optional. If True, diverging sets of glyphs are used for positive and negative values. If not specified, your scale will diverge if both positive and negative values are included for the shape variable.
+*  __shape__ (str): Optional. Glyph shape design to use for non-divergent scales. Default is sine. Available designs are:
    * "sine"
    * "saw"
    * "reverse_saw"
@@ -56,32 +60,34 @@ Parameters:
    * "triangular"
    * "concave"
    * "star"
-*  __shape_pos__ (string): Optional. When using divergent scale, glyph shape design to use for positive values. Default is sawtooth. Available designs as above.
-*  __shape_neg__ (string): Optional. When using divergent scale, glyph shape design to use for negative values. Default is sawtooth. Available designs as above.
-*  __colour_max__ (numerical): Optional. Maximum value to use for colour in key.
-*  __colour_min__ (numerical): Optional. Minimum value to use for colour in key.
+*  __shape_pos__ (str): Optional. When using divergent scale, glyph shape design to use for positive values. Default is sawtooth. Available designs as above.
+*  __shape_neg__ (str): Optional. When using divergent scale, glyph shape design to use for negative values. Default is sawtooth. Available designs as above.
+*  __colour_max__ (float): Optional. Maximum value to use for colour in key.
+*  __colour_min__ (float): Optional. Minimum value to use for colour in key.
 *  __colour_n__ (int): Optional. Number of colour values to be shown in key.
-*  __colour_spread__ (numerical): Optional. Total range of colour values in key. Only use if not specifying both max and min.
-*  __shape_max__ (numerical): Optional. Maximum value to use for shape in key.
-*  __shape_min__ (numerical): Optional. Minimum value to use for shape in key.
+*  __colour_spread__ (float): Optional. Total range of colour values in key. Only use if not specifying both max and min.
+*  __shape_max__ (float): Optional. Maximum value to use for shape in key.
+*  __shape_min__ (float): Optional. Minimum value to use for shape in key.
 *  __shape_n__ (int): Optional. Number of shape values to be shown in key. If using a diverging scale, this is the number of positive values including zero. Negative values will reflect positive values.
-*  __shape_spread__ (numerical): Optional. Total range of shape values in key. Only use if not specifying max and min.
-*  __colour_label__ (String): Optional. Text label for colour values in key.
-*  __shape_label__ (String): Optional. Text label for shape values in key.
-*  __title__ (string): Optional. Title to display at top.
-*  __x_label__ (string): Optional. Label for x axis. Not shown for image plots.
-*  __y_label__ (string): Optional. Label for y axis. Not shown for image plots.
-* __show_axes__ (Boolean): Optional. If axes are not wanted, e.g. for image plots, set to False.
-*  __save__ (Boolean): Optional. If True, save the plot as png.
-*  __file_name__ (String): Optional. If save, name of saved file.
-*  __return_axes__ (Boolean): Optional. If True, the function will return fig, ax1. These can be used to add more MatPlotLib elements, such as lines, text boxes.
+*  __shape_spread__ (float): Optional. Total range of shape values in key. Only use if not specifying max and min.
+*  __colour_label__ (str): Optional. Text label for colour values in key.
+*  __shape_label__ (str): Optional. Text label for shape values in key.
+*  __title__ (str): Optional. Title to display at top.
+*  __x_label__ (str): Optional. Label for x axis. Not shown for image plots.
+*  __y_label__ (str): Optional. Label for y axis. Not shown for image plots.
+* __show_axes__ (bool): Optional. If axes are not wanted, e.g. for image plots, set to False.
+*  __save__ (bool): Optional. If True, save the plot as png.
+*  __file_name__ (str): Optional. If save, name of saved file.
+*  __return_axes__ (bool): Optional. If True, the function will return fig, ax1. These can be used to add more MatPlotLib elements, such as lines, text boxes.
 * __scale_dp__ (int): Optional. The number of decimal places that scale values should be rounded to.
-* __interval_type__ (String): Optional. This defines how the shape of each glyph is determined:
+* __interval_type__ (str): Optional. This defines how the shape of each glyph is determined:
   * "closest": use the closest scale value
   * "limit": use the highest scale value that the glyph value is greater than or equal to (based on modulus for negative values)
-* __show_legend__ (Boolean): Optional. Specify whether or not to display the legend to the right of the plot.
+* __show_legend__ (bool): Optional. Specify whether or not to display the legend to the right of the plot.
 
 ## Glyph Designs
+
+The available glyph shape designs are shown here in full. Value increases with frequency from left (lowest) to right (highest).
 
 ### sine
 ![sine glyphs](https://github.com/luyc12/vizent/blob/main/vizent/example_images/glyphs/sine.png "sine glyphs")
@@ -248,7 +254,7 @@ plt.close()
 
 ## Meta
 
-Lucy McLaughlin
+Author: Lucy McLaughlin
 
 lucy.mclaughlin@newcastle.ac.uk
 
